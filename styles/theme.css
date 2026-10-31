@@ -1,0 +1,107 @@
+/* Korean stationery aesthetic. Design variance 3, motion 2, density 3.
+   Native uni-app components; shared tokens keep every screen in one theme. */
+page {
+  --paper: #f7f9f8;
+  --surface: #ffffff;
+  --ink: #39413f;
+  --muted: #687570;
+  --line: #dfe7e3;
+  --accent: #4f796d;
+  --accent-dark: #3f665b;
+  --accent-soft: #def0e8;
+  --accent-light: #eff7f3;
+  --on-accent: #ffffff;
+  --surface-ink: #39413f;
+  --surface-muted: #687570;
+  --surface-line: #dfe7e3;
+  --surface-accent: #3f665b;
+  --soft-ink: #39413f;
+  --soft-muted: #57695f;
+  --soft-line: #b9d3c5;
+  --soft-accent: #3f665b;
+  --light-ink: #39413f;
+  --light-muted: #687570;
+  --light-line: #dfe7e3;
+  --light-accent: #3f665b;
+  --card-base: #e8edeb;
+  --card-rare: #dcece4;
+  --card-limited: #d2e3db;
+  --card-ink: #466357;
+  --card-muted: #57695f;
+  --cover-mask: rgba(247,252,249,.9);
+  --danger: #92545c;
+  --surface-danger: #92545c;
+  --soft-danger: #92545c;
+  --light-danger: #92545c;
+  --radius: 20px;
+  --shadow: 0 6px 22px rgba(47, 64, 57, .045);
+  --page-width: 520px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+}
+view, text, input, textarea, button { box-sizing: border-box; }
+button, uni-button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit;
+}
+button::after { border: 0; }
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-bottom: calc(110px + env(safe-area-inset-bottom)) !important;
+  background: var(--paper);
+}
+.page text { overflow-wrap: anywhere; }
+.page input, .page textarea { min-width: 0; }
+.page button { min-height: 44px; margin-left: 0; margin-right: 0; white-space: normal; line-height: 1.4; padding: 10px 14px; font-size: 14px; }
+.page button::after { border: 0; }
+.page button[disabled] { opacity: .5; }
+.page button:focus-visible, .page [role="button"]:focus-visible, .tab-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.page .empty { padding: 32px 20px; color: var(--light-muted); text-align: center; background: var(--accent-light); border-radius: var(--radius); margin: 16px 0; font-size: 13px; }
+.panel { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+.panel, .overview-card, .member-card, .menu-list, .appearance-entry, .task-card { color: var(--surface-ink); --ink: var(--surface-ink); --muted: var(--surface-muted); --line: var(--surface-line); --accent-dark: var(--surface-accent); --danger: var(--surface-danger); }
+.surface { margin: 20px; }
+.field { margin: 22px 0; }
+.field-label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 9px; }
+.field-input { width: 100%; min-height: 50px; padding: 13px 15px; background: var(--surface); border: 1px solid var(--surface-line); border-radius: 14px; color: var(--surface-ink); font-size: 15px; line-height: 1.5; }
+.field-input:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.field-input input::placeholder, .field-input textarea::placeholder { color: var(--muted); }
+.row { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin: 16px 0; }
+.row > view { min-width: 0; }
+.row > button { flex-shrink: 0; }
+.muted { color: var(--muted); font-size: 12px; line-height: 1.8; display: block; }
+.action { width: 100%; background: var(--accent); color: var(--on-accent); border-radius: 14px; min-height: 50px; margin: 18px 0 12px; font-weight: 600; }
+.secondary { background: var(--accent-soft); color: var(--soft-accent); border-radius: 14px; min-height: 46px; margin: 12px 0; }
+.divider { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.pill { display: inline-flex; align-items: center; padding: 7px 11px; background: var(--accent-soft); color: var(--soft-accent); border-radius: 10px; font-size: 12px; line-height: 1.5; }
+.pressable { cursor: pointer; transition: transform .16s ease, opacity .16s ease, background .16s ease; }
+.pressable:active { transform: scale(.985); opacity: .8; }
+.gem-pill { display: flex; gap: 5px; align-items: center; justify-content: center; min-width: 65px; height: 38px; padding: 0 12px; border-radius: 14px; color: var(--soft-accent); background: var(--accent-soft); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.gem-pill.negative { color: var(--soft-danger); }
+.section-link { color: var(--muted); font-size: 12px; display: flex; align-items: center; gap: 3px; min-height: 44px; }
+@media (min-width: 600px) {
+  page { background: #edf0ee; }
+  .page { box-shadow: 0 0 65px rgba(47,64,57, .06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page *, .tab-shell * { transition: none !important; animation: none !important; }
+  .pressable:active { transform: none; }
+}
